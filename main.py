@@ -1,3 +1,4 @@
+# lambda
 liczby = [2, 10, 12, 114, 16, 7778, 98, 5]
 
 wynik = map(lambda x: x * 2, liczby)  # modyfikuje listę zgodnie z działaniem 1 arg czyli funkcji
@@ -37,11 +38,59 @@ def generator_parzystych(n):  # sposob z yield
 
 print(list(generator_parzystych(15)))
 
-def generator_parzystych2(n): #sposob z list expression
+
+def generator_parzystych2(n):  # sposob z list expression
     output = []
     for i in range(0, n):
         if i % 2 == 0:
             output.append(i)
     return output
 
+
 print(generator_parzystych2(15))
+
+# decorator
+print('\n')
+
+
+def christmas_tree(function):
+    def wrapper():
+        tree = [
+            '       XXX      *     *    ',
+            '*     XXXXX         *   *',
+            '  *  XXXXXXX           ',
+            '    XXXXXXXXX     *     ',
+            '*  XXXXXXXXXXX      *',
+            '        X      ',
+            '🅼🅴🆁🆁🆈 🅲🅷🆁🅸🆂🆃🅼🅰🆂'
+        ]
+        for i in tree:
+            print(i)
+        function
+
+    return wrapper
+
+
+@christmas_tree
+def merry_christmas():
+    return 'wesołych świąt!' #czemu tego nie zwraca?
+
+
+def is_it_Christmas():
+    while True:
+        try:
+            answer = input('czy mamy już święta? [y] lub [n]\n')
+            if answer == 'y':
+                return merry_christmas()
+                break
+            elif answer == 'n':
+                return 'wróć tu w święta!'
+                exit()
+            else:
+                print('zła odpowiedź')
+                continue
+        except ValueError:
+            continue
+
+
+print(is_it_Christmas())
