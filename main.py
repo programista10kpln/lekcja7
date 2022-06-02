@@ -66,14 +66,14 @@ def christmas_tree(function):
         ]
         for i in tree:
             print(i)
-        function
+        function()
 
     return wrapper
 
 
 @christmas_tree
 def merry_christmas():
-    return 'wesołych świąt!' #czemu tego nie zwraca?
+    print('wesołych świąt!')
 
 
 def is_it_Christmas():
@@ -85,7 +85,6 @@ def is_it_Christmas():
                 break
             elif answer == 'n':
                 return 'wróć tu w święta!'
-                exit()
             else:
                 print('zła odpowiedź')
                 continue
@@ -93,4 +92,4 @@ def is_it_Christmas():
             continue
 
 
-print(is_it_Christmas())
+print(is_it_Christmas())  # skad to none?
