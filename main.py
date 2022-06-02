@@ -66,14 +66,14 @@ def christmas_tree(function):
         ]
         for i in tree:
             print(i)
-        function()
+        return function()
 
     return wrapper
 
 
 @christmas_tree
 def merry_christmas():
-    print('wesołych świąt!')
+    return 'wesołych świąt!'
 
 
 def is_it_Christmas():
@@ -82,7 +82,6 @@ def is_it_Christmas():
             answer = input('czy mamy już święta? [y] lub [n]\n')
             if answer == 'y':
                 return merry_christmas()
-                break
             elif answer == 'n':
                 return 'wróć tu w święta!'
             else:
