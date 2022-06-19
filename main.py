@@ -91,4 +91,4 @@ def is_it_Christmas():
             continue
 
 
-print(is_it_Christmas())  # skad to none?
+print(is_it_Christmas())
